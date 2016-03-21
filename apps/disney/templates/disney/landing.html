@@ -29,8 +29,7 @@
         }
 
         function buildImage(y, link){
-            d3.select('SVG')
-                .append('image')
+                SVG.append('image')
                 .attr('xlink:href', link)
                 .attr('height', '75')
                 .attr('width', '150')
@@ -39,11 +38,10 @@
         }
 
         function buildMoney(y, text){
-            d3.select('SVG')
-                .append('text')
+                SVG.append('text')
                 .text(text)
                 .style('font-family', 'walt')
-                .style('font-size', '24')
+                .style('font-size', '24px')
                 .attr('height', '75')
                 .attr('width', '150')
                 .attr('x', '350')
@@ -53,9 +51,9 @@
         buildCircle("green", dataset[0])
         buildCircle("lightgreen", dataset[1])
         buildCircle("blue", dataset[2])
-        buildImage('50', '../../static/disney/starwars.jpg')
-        buildImage('150', '../../static/disney/marvels.png')
-        buildImage('360', '../../static/disney/avengers.png')
+        buildImage('50', './../../static/disney/starwars.jpg')
+        buildImage('150', './../../static/disney/marvels.png')
+        buildImage('360', './../../static/disney/avengers.png')
         buildMoney('720', "$" + dataset[0])
         buildMoney('620', "$" + dataset[1])
         buildMoney('520', "$" + dataset[2])
