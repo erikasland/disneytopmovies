@@ -12,6 +12,7 @@
 
     <script type="text/javascript">
         var dataset = ["932318187", "623357910", "459005868"];
+        console.log(Math.sqrt(dataset[0]))
 
         var SVG = d3.select("#viz")
             .append("svg")
@@ -23,40 +24,38 @@
                 .style("stroke", "black")
                 .style("fill", fillcolor)
                 .style("opacity", ".5")
-                .attr("r", (data *.0000004))
+                .attr("r", (Math.sqrt(data) *.012))
                 .attr("cx", 435)
                 .attr("cy", 400)
         }
 
-        function buildImage(y, link){
+        function buildImage(y, x, link, h, w){
                 SVG.append('image')
                 .attr('xlink:href', link)
-                .attr('height', '75')
-                .attr('width', '150')
-                .attr('x', '360')
+                .attr('height', h)
+                .attr('width', w)
+                .attr('x', x)
                 .attr('y', y)
         }
 
         function buildMoney(y, text){
-                SVG.append('text')
-                .text(text)
-                .style('font-family', 'walt')
-                .style('font-size', '24px')
-                .attr('height', '75')
-                .attr('width', '150')
-                .attr('x', '350')
-                .attr('y', y)
+            SVG.append('text')
+            .text("$" + text.slice(0, 3) + "," + text.slice(3, 6) + "," + text.slice(6, 9))
+            .style('font-family', 'walt')
+            .style('font-size', '24px')
+            .attr('x', '350')
+            .attr('y', y)
         }
 
         buildCircle("green", dataset[0])
         buildCircle("lightgreen", dataset[1])
         buildCircle("blue", dataset[2])
-        buildImage('50', './../../static/disney/starwars.jpg')
-        buildImage('150', './../../static/disney/marvels.png')
-        buildImage('360', './../../static/disney/avengers.png')
-        buildMoney('720', "$" + dataset[0])
-        buildMoney('620', "$" + dataset[1])
-        buildMoney('520', "$" + dataset[2])
+        buildImage('28', '310','./../../static/disney/starwars.jpg', '100', '250')
+        buildImage('90', '360','./../../static/disney/marvels.png', '75', '150')
+        buildImage('360', '360', './../../static/disney/avengers.png', '75', '150')
+        buildMoney('740', dataset[0])
+        buildMoney('680', dataset[1])
+        buildMoney('620', dataset[2])
     </script>
 </body>
 </html
