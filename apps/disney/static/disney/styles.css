@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    border: 0;
+}
+
+@font-face{
+    font-family: "walt";
+    src: url(walt.ttf);
+}
+
+html { 
+  height: 100%;
+  background: url(disney.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1{
+    font-family: "walt";
+    font-size: 46px;
+    text-align: center;
+}
+
+#viz{
+    width: 870px;
+    margin: 2em auto;
+}
+
+svg{
+    padding: 2em 0 0 0;
+}
+
+#movie1, #movie2, #movie3{
+    width: 150px;
+    position: absolute;
+    border-radius: 10px;
+    left: 50%;
+}
+
+#movie1{
+    height: 75px;
+    top: 22.5%;
+    transform: translateY(-77.5%) translateX(-50%);
+}
+
+#movie2{
+    height: 50px;
+    top: 31.5%;
+    transform: translateY(-58.5%) translateX(-50%);
+}
+
+#movie3{
+    height: 50px;
+    top: 53%;
+    transform: translateY(-47%) translateX(-50%);
+}
+
+#movieprofit1, #movieprofit2, #movieprofit3{
+    font-family: "walt";
+    font-size: 1em;
+    position: absolute;
+    left: 50%;
+}
+
+#movieprofit1{
+    bottom: 11%;
+    transform: translateX(-50%) translateY(-89%);
+    font-size: 1.5em;
+}
+
+#movieprofit2{
+    bottom: 22%;
+    transform: translateX(-50%) translateY(-78%);
+    font-size: 1.5em;
+}
+
+#movieprofit3{
+    bottom: 32%;
+    transform: translateX(-50%) translateY(-68%);
+    font-size: 1.5em;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../static/disney/styles.css">
+</head>
+<body>
+    <div id="viz">
+        <h1>Top 3 Grossing Disney Movies</h1>
+    </div>
+
+    <script type="text/javascript">
+        var dataset = ["932318187", "623357910", "459005868"];
+
+        var SVG = d3.select("#viz")
+            .append("svg")
+            .attr("width", 870)
+            .attr("height", 800)
+
+        function buildCircle(fillcolor, data){
+            SVG.append("circle")
+                .style("stroke", "black")
+                .style("fill", fillcolor)
+                .style("opacity", ".5")
+                .attr("r", (data *.0000004))
+                .attr("cx", 435)
+                .attr("cy", 400)
+        }
+
+        function buildImage(y, link){
+            d3.select('SVG')
+                .append('image')
+                .attr('xlink:href', link)
+                .attr('height', '75')
+                .attr('width', '150')
+                .attr('x', '360')
+                .attr('y', y)
+        }
+
+        function buildMoney(y, text){
+            d3.select('SVG')
+                .append('text')
+                .text(text)
+                .style('font-family', 'walt')
+                .style('font-size', '24')
+                .attr('height', '75')
+                .attr('width', '150')
+                .attr('x', '350')
+                .attr('y', y)
+        }
+
+        buildCircle("green", dataset[0])
+        buildCircle("lightgreen", dataset[1])
+        buildCircle("blue", dataset[2])
+        buildImage('50', '../../static/disney/starwars.jpg')
+        buildImage('150', '../../static/disney/marvels.png')
+        buildImage('360', '../../static/disney/avengers.png')
+        buildMoney('720', "$" + dataset[0])
+        buildMoney('620', "$" + dataset[1])
+        buildMoney('520', "$" + dataset[2])
+    </script>
+</body>
+</html
